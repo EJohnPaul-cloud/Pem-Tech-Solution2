@@ -1,0 +1,703 @@
+:root {
+    --primary-blue: #0A2342;
+    --secondary-blue: #1E3A8A;
+    --white-color: #F9F9F9;
+    --milk-color: #F0F4F8;
+    --gold-color: #FFD700;
+    --orange-color: #FF8C00;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-blue);
+    background-color: var(--white-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    color: var(--secondary-blue);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--gold-color);
+    color: var(--primary-blue);
+}
+
+.btn-primary:hover {
+    background-color: var(--orange-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-blue);
+    color: var(--white-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-blue);
+}
+
+.btn-tertiary {
+    background-color: transparent;
+    border: 2px solid var(--secondary-blue);
+    color: var(--secondary-blue);
+}
+
+.btn-tertiary:hover {
+    background-color: var(--secondary-blue);
+    color: var(--white-color);
+}
+
+/* Header */
+.header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--secondary-blue);
+}
+
+/* Hamburger Menu Icon */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-blue);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Styles for active menu (toggled) */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--milk-color) 0%, var(--white-color) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--gold-color) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--orange-color) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+}
+
+.hero-image {
+    margin-top: 40px;
+    max-width: 100%;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Homepage-specific Styles */
+.about-section .container,
+.hero-section .container {
+    flex-direction: column;
+}
+
+.about-content,
+.about-image {
+    padding-right: 0;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services-section {
+    background-color: var(--milk-color);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+}
+
+.service-item {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--milk-color);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--milk-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+/* Blog Page Styles */
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.blog-post {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.blog-post h4 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+/* Contact Page Styles */
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--milk-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-blue);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--primary-blue);
+    background-color: var(--white-color);
+}
+
+/* New CSS for About Us and Services pages */
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.story-content p {
+    flex: 1;
+}
+
+.story-image {
+    max-width: 100%;
+    flex: 1;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-section {
+    background-color: var(--milk-color);
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.team-member {
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--secondary-blue);
+}
+
+.team-member h4 {
+    margin-bottom: 5px;
+}
+
+.service-detail-section {
+    background-color: var(--milk-color);
+}
+
+.service-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 60px;
+    padding: 30px;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-detail h4 {
+    margin-top: 0;
+}
+
+.service-detail ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-detail ul li {
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.service-detail ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold-color);
+}
+
+.service-detail figure {
+    width: 100%;
+}
+
+.service-detail img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Mobile/Tablet */
+@media (max-width: 767px) {
+    .header .container {
+        justify-content: space-between;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white-color);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Media Queries for Tablets and Desktops */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        padding: 100px 20px;
+    }
+
+    .hero-content {
+        max-width: 50%;
+        text-align: left;
+        padding-right: 40px;
+    }
+
+    .hero-image {
+        max-width: 50%;
+        margin-top: 0;
+    }
+
+    .about-section .container {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .about-content {
+        flex: 1;
+        padding-right: 40px;
+    }
+
+    .about-image {
+        flex: 1;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .story-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-detail {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .service-detail:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    
+    .service-detail h4,
+    .service-detail p {
+        flex: 1;
+    }
+    
+    .service-detail figure {
+        flex: 1;
+    }
+    
+    .service-image-right {
+        order: 2;
+    }
+
+    .service-image-left {
+        order: 1;
+    }
+}
+
+
+/* ============================================== */
+/* 1. STYLES FOR THE BLOG POST CARD & READ MORE LINK */
+/* ============================================== */
+
+/* Basic Card Styling (Add this if you haven't already for visual structure) */
+.blog-post {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    /* Important for placement: ensure the button is at the bottom */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content fills space */
+    height: 100%; /* Or a specific height if you want uniform cards */
+}
+
+/* Enhancing the button's professional look */
+.read-more-link {
+    /* Resets */
+    text-decoration: none;
+    display: inline-block;
+    
+    /* Appearance */
+    background-color: #007bff; /* Professional blue */
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    margin-top: 15px; /* Added space above the button for separation from description */
+    align-self: flex-start; /* Keeps the button aligned left if the card uses flex */
+}
+
+/* Hover and Focus state */
+.read-more-link:hover,
+.read-more-link:focus {
+    background-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for depth */
+}
+
+/* Active state */
+.read-more-link:active {
+    background-color: #004085;
+    transform: translateY(1px);
+}
+
+/* ============================================== */
+/* 2. STYLES FOR THE MODAL POP-UP */
+/* ============================================== */
+
+/* The Modal Container (Hidden by default) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow-y: auto; /* Changed to auto to allow scrolling only when content overflows */
+    background-color: rgba(0,0,0,0.8); /* Slightly darker backdrop for focus */
+    padding: 20px 0; /* Ensures there's vertical padding for smaller screens */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 50px auto 20px auto; /* Centered with a little space at the top/bottom */
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%; /* Increased width for better mobile experience */
+    max-width: 800px; /* Standardized max size */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Pronounced shadow */
+    position: relative;
+    animation: fadeIn 0.3s ease-out; /* Added a simple animation */
+}
+
+/* Ensure images inside the modal are responsive */
+.modal-content figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px; /* Slightly more rounded edges */
+    margin-bottom: 25px;
+}
+
+/* The Close Button */
+.close-button {
+    color: #444; /* Darker color for visibility */
+    float: right;
+    font-size: 36px; /* Larger for easy clicking */
+    font-weight: normal; /* Less bold is sometimes cleaner */
+    line-height: 1; 
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #d9534f; /* A subtle red to indicate "closing" or "stopping" */
+}
+
+/* Keyframes for simple modal entrance animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
